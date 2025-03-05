@@ -15,6 +15,7 @@
     <!-- Task Form -->
     <div class="card p-3 mb-4 shadow">
         <h5 class="mb-3">Add / Update Task</h5>
+        <input type="hidden" id="taskId">
         <input type="text" id="title" class="form-control mb-2" placeholder="Title">
         <input type="text" id="desc" class="form-control mb-2" placeholder="Description">
         <select id="status" class="form-select mb-2">
@@ -77,8 +78,9 @@
     <!-- Task List -->
     <div id="taskList" class="row g-3"></div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js"></script>
 
-    <script src="script.js"></script>
+    <script src="script1.js"></script>
 
 
 </body>
