@@ -84,36 +84,36 @@ function displayTasks() {
     })
     .forEach((task) => {
       taskList.innerHTML += `
-                <div class="col-md-4">
-                    <div class="card ${getStatusClass(task.status)} shadow">
-                        <div class="card-body">
-                            <h5 class="card-title">${task.title}</h5>
-                            <p class="card-text">${task.desc}</p>
-                            <select class="form-select form-select-sm mb-2" onchange="updateTaskStatus('${
-                              task.id
-                            }', this.value)">
-                                <option value="todo" ${
-                                  task.status === "todo" ? "selected" : ""
-                                }>To Do</option>
-                                <option value="inprogress" ${
-                                  task.status === "inprogress" ? "selected" : ""
-                                }>In Progress</option>
-                                <option value="done" ${
-                                  task.status === "done" ? "selected" : ""
-                                }>Done</option>
-                            </select>
-                            <div class="mt-3 d-flex justify-content-between">
-                                <button class="btn btn-warning btn-sm" onclick="editTask('${
-                                  task.id
-                                }')">Edit</button>
-                                <button class="btn btn-danger btn-sm" onclick="deleteTask('${
-                                  task.id
-                                }')">Delete</button>
-                            </div>
-                        </div>
+        <div class="col-md-4">
+            <div class="card ${getStatusClass(task.status)} shadow">
+                <div class="card-body">
+                    <h5 class="card-title">${task.title}</h5>
+                    <p class="card-text">${task.desc}</p>
+                    <select class="form-select form-select-sm mb-2" onchange="updateTaskStatus('${
+                      task.id
+                    }', this.value)">
+                        <option value="todo" ${
+                          task.status === "todo" ? "selected" : ""
+                        }>To Do</option>
+                        <option value="inprogress" ${
+                          task.status === "inprogress" ? "selected" : ""
+                        }>In Progress</option>
+                        <option value="done" ${
+                          task.status === "done" ? "selected" : ""
+                        }>Done</option>
+                    </select>
+                    <div class="mt-3 d-flex justify-content-between">
+                        <button class="btn btn-warning btn-sm" onclick="editTask('${
+                          task.id
+                        }')">Edit</button>
+                        <button class="btn btn-danger btn-sm" onclick="deleteTask('${
+                          task.id
+                        }')">Delete</button>
                     </div>
                 </div>
-            `;
+            </div>
+        </div>
+      `;
     });
 }
 
@@ -151,15 +151,6 @@ function deleteTask(id) {
 }
 
 // Get Status Class for Styling
-// function getStatusClass(status) {
-//   return status === "todo"
-//     ? "bg-danger bg-opacity-25 border border-danger"
-//     : status === "inprogress"
-//     ? "bg-warning bg-opacity-25 border border-warning"
-//     : "bg-success bg-opacity-25 border border-success";
-// }
-
-// Get Status Class for Styling
 function getStatusClass(status) {
   console.log("Task Status:", status); // Debug log to see what status is being passed
   if (status === "todo") {
@@ -170,16 +161,6 @@ function getStatusClass(status) {
     return "bg-success bg-opacity-25 border border-success";
   }
 }
-
-// function getStatusClass(status) {
-//   if (status === "todo") {
-//     return "bg-danger bg-opacity-25 border border-danger";
-//   } else if (status === "inprogress") {
-//     return "bg-warning bg-opacity-25 border border-warning";
-//   } else {
-//     return "bg-success bg-opacity-25 border border-success";
-//   }
-// }
 
 // Initialize
 document.addEventListener("DOMContentLoaded", loadTasks);
